@@ -3,6 +3,27 @@
 const div = document.createElement('div')
 div.innerHTML= 'Criando uma pokedex'
 console.log(div)
+const cardColor = {
+    'grass': '#63BD59',
+    'fire': '#FB9D55',
+    'flying':'#93AADC',
+    'poison':'#A86BCA',
+    'normal':'#9198A2',
+    'water':'#4D90D6',
+    'ground':'#DE7545',
+    'bug':'#8EBF2F',
+    'fairy':'#E890E7',
+    'fighting':'#D03F6A',
+    'psychic':'#F87177',
+    'rock':'#C9B789',
+    'electric':'#F4D23B',
+    'ice':'#74CFC0',
+    'ghost':'#526AA8',
+    'dragon':'#136DC3',
+    'dark':'#5A5A5E',
+    'steel':'#76A5AF'
+    
+}
 
 const page = document.querySelector('#pokedex-page')
 // page.appendChild(div)
@@ -32,23 +53,10 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=150&offset=0')
             console.log(info)
             box.querySelector('#pokemon-type').innerHTML = info.types[0].type.name
             box.querySelector('#pokemon-type').style.textTransform="capitalize"
+            box.querySelector('#pokemon-type-cardColor').style.backgroundColor = cardColor[info.types[0].type.name]
             page.innerHTML += box.outerHTML
-            // const pokemonType = await fetch('https://pokeapi.co/api/v2/type/')
-            // const type = await pokemonType.json()
-            // console.log(type)
-            // box.querySelector('#pokemon-type').innerHTML = type.results[i].name
             
-            // 'if pokemon.types.type.name ==                       '
-
-            // if box.querySelector('#pokemon-type').innerHTML = type.results[i].name
-            
-            // console.log(data.results[i].name)
         }
 
         
     })
-
-
-
-    // for (let i=0; i < )
-
